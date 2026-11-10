@@ -1,0 +1,831 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharp Scan Online Tasks</title>
+<meta name="description" content="Sharp Scan Online Tasks - AI Training, Academic Writing, Transcription and Data Entry.">
+<style>
+:root{
+ --navy:#102347;
+ --blue:#1769e0;
+ --cyan:#22b8cf;
+ --bg:#f3f6fb;
+ --white:#fff;
+ --text:#25334c;
+ --muted:#718096;
+ --green:#159b69;
+ --red:#d83b4b;
+}
+*{box-sizing:border-box}
+body{
+ margin:0;background:var(--bg);color:var(--text);
+ font-family:Arial,Helvetica,sans-serif;
+}
+header{
+ background:var(--navy);color:white;padding:15px 5%;
+ display:flex;align-items:center;justify-content:space-between;
+ gap:15px;flex-wrap:wrap;
+}
+.brand{font-size:23px;font-weight:900;letter-spacing:.5px}
+.brand span{color:var(--cyan)}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+button{
+ border:0;padding:11px 15px;border-radius:7px;
+ cursor:pointer;font-weight:bold;font-size:14px;
+}
+nav button{background:transparent;color:white}
+nav button:hover{background:#29436d}
+.primary{background:var(--blue);color:white}
+.green{background:var(--green);color:white}
+.red{background:var(--red);color:white}
+.light{background:#e9f1ff;color:var(--blue)}
+button:hover{filter:brightness(.95)}
+.hero{
+ background:linear-gradient(120deg,#102347,#1769e0);
+ color:white;padding:75px 20px;text-align:center;
+}
+.hero h1{font-size:43px;margin:0 0 15px}
+.hero p{font-size:17px;line-height:1.8}
+.container{max-width:1150px;margin:auto;padding:35px 20px}
+.center{text-align:center}
+.grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px;
+}
+.card,.panel{
+ background:white;border-radius:13px;padding:23px;
+ box-shadow:0 4px 20px rgba(20,40,70,.07);
+ margin-bottom:18px;
+}
+.card h3{color:var(--navy)}
+.icon{font-size:37px}
+h1,h2,h3{color:var(--navy)}
+.hero h1{color:white}
+.hero .brandline{color:#b9eaff}
+.price{
+ background:#eaf3ff;text-align:center;padding:25px;
+ border-radius:12px;margin:25px 0;
+}
+.price h2{font-size:42px;color:var(--blue);margin:8px}
+label{display:block;font-weight:bold;font-size:14px;margin-top:12px}
+input,select,textarea{
+ width:100%;padding:12px;border:1px solid #d7deea;
+ border-radius:7px;margin-top:7px;font-size:15px;
+ background:white;
+}
+textarea{min-height:100px;resize:vertical}
+form button{margin-top:15px}
+.notice{
+ background:#fff5db;border-left:4px solid #e3a000;
+ padding:14px;border-radius:7px;line-height:1.6;margin:15px 0;
+}
+.info{
+ background:#e8f5ff;border-left:4px solid var(--blue);
+ padding:14px;border-radius:7px;margin:15px 0;line-height:1.6;
+}
+.good{
+ background:#e4f8ef;border-left:4px solid var(--green);
+ padding:14px;border-radius:7px;margin:15px 0;
+}
+.hidden{display:none!important}
+.small{font-size:12px;color:var(--muted);line-height:1.6}
+.task{
+ border:1px solid #e5eaf2;border-radius:9px;
+ padding:16px;margin:12px 0;background:white;
+}
+.task h3{margin:5px 0}
+.badge{
+ display:inline-block;background:#eaf2ff;color:var(--blue);
+ border-radius:20px;padding:5px 10px;font-size:12px;
+ font-weight:bold;
+}
+.status{font-weight:bold;color:var(--green)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:white;min-width:650px}
+th,td{padding:12px;border-bottom:1px solid #e5eaf0;text-align:left;font-size:13px}
+th{background:#edf3fc;color:var(--navy)}
+.actions{display:flex;gap:5px;flex-wrap:wrap}
+footer{
+ background:var(--navy);color:white;text-align:center;
+ padding:30px 15px;margin-top:40px;
+}
+footer h3{color:white}
+a{color:var(--blue)}
+@media(max-width:600px){
+ .hero h1{font-size:31px}
+ header{justify-content:center}
+ nav{justify-content:center}
+ .container{padding:22px 13px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="brand">SHARP <span>SCAN</span></div>
+ <nav>
+  <button onclick="page('home')">Home</button>
+  <button onclick="page('tasks')">Tasks</button>
+  <button onclick="page('register')">Join Us</button>
+  <button onclick="page('login')">Login</button>
+  <button onclick="page('adminLogin')">Admin</button>
+ </nav>
+</header>
+
+<!-- HOME PAGE -->
+<section id="home">
+ <div class="hero">
+  <h1>SHARP SCAN ONLINE TASKS</h1>
+  <p class="brandline">YOUR SKILLS. YOUR OPPORTUNITY. YOUR FUTURE.</p>
+  <p>Explore online task opportunities, develop digital skills
+  and work on assignments in different categories.</p>
+  <button class="green" onclick="page('register')">JOIN SHARP SCAN NOW</button>
+  <button class="light" onclick="page('tasks')">EXPLORE TASKS</button>
+ </div>
+
+ <div class="container">
+  <h2 class="center">OUR TASK CATEGORIES</h2>
+  <div class="grid">
+   <div class="card">
+    <div class="icon">🤖</div>
+    <h3>AI TRAINING</h3>
+    <p>AI data annotation, text classification, image labelling
+    and AI response evaluation.</p>
+   </div>
+   <div class="card">
+    <div class="icon">📚</div>
+    <h3>ACADEMIC WRITING</h3>
+    <p>Proofreading, research assistance, editing,
+    referencing and document formatting.</p>
+   </div>
+   <div class="card">
+    <div class="icon">🎧</div>
+    <h3>TRANSCRIPTION</h3>
+    <p>Convert audio and video recordings into accurate written text.</p>
+   </div>
+   <div class="card">
+    <div class="icon">💻</div>
+    <h3>DATA ENTRY</h3>
+    <p>Typing, spreadsheet management, data processing
+    and information organization.</p>
+   </div>
+  </div>
+
+  <div class="price">
+   <h3>ONE-TIME ACCOUNT ACTIVATION</h3>
+   <h2>KSh 90</h2>
+   <p>One-time activation fee. No recurring activation charge.</p>
+   <button class="primary" onclick="page('register')">CREATE ACCOUNT</button>
+  </div>
+
+  <div class="card">
+   <h2>HOW TO GET STARTED</h2>
+   <p>1. Register using your National ID number.</p>
+   <p>2. Create your own password.</p>
+   <p>3. Pay the KSh 90 activation fee using an available M-PESA method.</p>
+   <p>4. Submit your transaction reference for verification.</p>
+   <p>5. Once verified, access eligible tasks posted by the administrator.</p>
+  </div>
+
+  <div class="card center">
+   <h2>INVITE OTHERS TO JOIN</h2>
+   <p>Share the official Sharp Scan joining link.</p>
+   <input id="joinLinkHome" readonly>
+   <button class="primary" onclick="copyJoin()">COPY JOINING LINK</button>
+  </div>
+ </div>
+</section>
+
+<!-- TASKS PAGE -->
+<section id="tasks" class="hidden">
+ <div class="container">
+  <h2>AVAILABLE ONLINE TASKS</h2>
+  <p>Assignments posted by the Sharp Scan administrator appear below.</p>
+  <div id="publicTasks"></div>
+  <div class="notice">
+   Task availability is subject to assignments posted by the administrator.
+   Earnings are not guaranteed and depend on completed work and agreed terms.
+  </div>
+  <button class="primary" onclick="page('register')">REGISTER TO JOIN</button>
+ </div>
+</section>
+
+<!-- REGISTER PAGE -->
+<section id="register" class="hidden">
+ <div class="container">
+  <div class="panel" style="max-width:600px;margin:auto">
+   <h2>CREATE YOUR ACCOUNT</h2>
+   <p>Join Sharp Scan Online Tasks.</p>
+   <form id="registerForm">
+    <label>Full Name</label>
+    <input id="rName" required placeholder="Your full name">
+
+    <label>National ID Number (Username)</label>
+    <input id="rId" required placeholder="Enter your ID number">
+
+    <label>Phone Number</label>
+    <input id="rPhone" required placeholder="07XXXXXXXX">
+
+    <label>Email Address</label>
+    <input id="rEmail" type="email" required placeholder="Your email">
+
+    <label>Create Password</label>
+    <input id="rPassword" type="password" minlength="8"
+     required placeholder="Minimum 8 characters">
+
+    <label>Confirm Password</label>
+    <input id="rConfirm" type="password" required>
+
+    <label>Preferred Task Category</label>
+    <select id="rCategory">
+     <option>AI Training</option>
+     <option>Academic Writing</option>
+     <option>Transcription</option>
+     <option>Data Entry</option>
+    </select>
+
+    <button class="primary" type="submit">REGISTER ACCOUNT</button>
+   </form>
+   <p class="small">Already have an account?
+    <a href="#" onclick="page('login')">Login here</a>
+   </p>
+  </div>
+ </div>
+</section>
+
+<!-- PAYMENT PAGE -->
+<section id="payment" class="hidden">
+ <div class="container">
+  <div class="panel" style="max-width:650px;margin:auto">
+   <h2>ACCOUNT ACTIVATION PAYMENT</h2>
+   <div class="price">
+    <p>ONE-TIME ACTIVATION FEE</p>
+    <h2>KSh 90</h2>
+   </div>
+
+   <h3>M-PESA PAYMENT METHODS</h3>
+
+   <div class="card">
+    <h3>1. BUY GOODS / TILL NUMBER</h3>
+    <p>Amount: <b>KSh 90</b></p>
+    <p>Till Number: <b>1641367</b></p>
+    <button class="light" onclick="copyText('1641367')">COPY TILL NUMBER</button>
+   </div>
+
+   <div class="card">
+    <h3>2. SEND MONEY</h3>
+    <p>Amount: <b>KSh 90</b></p>
+    <p>Phone Number: <b>0748559320</b></p>
+    <button class="light" onclick="copyText('0748559320')">COPY PHONE NUMBER</button>
+   </div>
+
+   <div class="card">
+    <h3>3. PAYBILL</h3>
+    <p>Paybill payment is not yet configured.</p>
+    <p class="small">A Paybill number and account number must be supplied by the administrator before this method can be used.</p>
+   </div>
+
+   <div class="notice">
+    Verify the recipient's registered name before paying.
+    Never share your M-PESA PIN or OTP. Keep your transaction message.
+   </div>
+
+   <h3>SUBMIT PAYMENT REFERENCE</h3>
+   <form id="paymentForm">
+    <label>Select payment method</label>
+    <select id="pMethod">
+     <option value="Till Number">Buy Goods / Till Number</option>
+     <option value="Send Money">Send Money</option>
+    </select>
+
+    <label>M-PESA Transaction Code</label>
+    <input id="pCode" required placeholder="Example: ABC123XYZ">
+
+    <button class="primary" type="submit">SUBMIT PAYMENT FOR VERIFICATION</button>
+   </form>
+   <p class="small">Your account remains pending until the administrator
+   independently verifies the payment.</p>
+  </div>
+ </div>
+</section>
+
+<!-- USER LOGIN -->
+<section id="login" class="hidden">
+ <div class="container">
+  <div class="panel" style="max-width:500px;margin:auto">
+   <h2>USER LOGIN</h2>
+   <form id="loginForm">
+    <label>National ID Number</label>
+    <input id="lId" required>
+    <label>Password</label>
+    <input id="lPassword" type="password" required>
+    <button class="primary" type="submit">LOGIN</button>
+   </form>
+  </div>
+ </div>
+</section>
+
+<!-- USER DASHBOARD -->
+<section id="dashboard" class="hidden">
+ <div class="container">
+  <h2>WELCOME, <span id="welcome"></span></h2>
+  <div class="grid">
+   <div class="card">
+    <h3>ACCOUNT STATUS</h3>
+    <h2 id="uStatus">Pending</h2>
+   </div>
+   <div class="card">
+    <h3>PAYMENT STATUS</h3>
+    <p id="uPayment">Not submitted</p>
+   </div>
+   <div class="card">
+    <h3>PREFERRED CATEGORY</h3>
+    <p id="uCategory"></p>
+   </div>
+  </div>
+
+  <div class="card">
+   <h2>YOUR TASKS</h2>
+   <p id="lockMessage" class="notice"></p>
+   <div id="userTasks"></div>
+   <button class="primary" onclick="page('payment')">ACTIVATE ACCOUNT</button>
+   <button class="red" onclick="logout()">LOG OUT</button>
+  </div>
+
+  <div class="card">
+   <h3>YOUR REFERRAL LINK</h3>
+   <input id="joinLinkUser" readonly>
+   <button class="light" onclick="copyJoin()">COPY LINK</button>
+  </div>
+ </div>
+</section>
+
+<!-- ADMIN LOGIN -->
+<section id="adminLogin" class="hidden">
+ <div class="container">
+  <div class="panel" style="max-width:500px;margin:auto">
+   <h2>ADMINISTRATOR LOGIN</h2>
+   <form id="adminLoginForm">
+    <label>Admin Username</label>
+    <input id="aUser" required>
+    <label>Admin Password</label>
+    <input id="aPass" type="password" required>
+    <button class="primary" type="submit">ADMIN LOGIN</button>
+   </form>
+   <div class="notice">
+    Demonstration login: username <b>admin</b><br>
+    Password: <b>SharpScan90!</b><br>
+    Change these credentials and use server-side authentication before deployment.
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ADMIN PANEL -->
+<section id="admin" class="hidden">
+ <div class="container">
+  <h2>SHARP SCAN ADMIN PANEL</h2>
+  <p>Manage members, publish tasks and verify activation payments.</p>
+
+  <div class="grid">
+   <div class="card"><h3>TOTAL MEMBERS</h3><h2 id="totalMembers">0</h2></div>
+   <div class="card"><h3>PENDING PAYMENTS</h3><h2 id="pendingCount">0</h2></div>
+   <div class="card"><h3>ACTIVE MEMBERS</h3><h2 id="activeCount">0</h2></div>
+   <div class="card"><h3>POSTED TASKS</h3><h2 id="taskCount">0</h2></div>
+  </div>
+
+  <!-- POST TASK -->
+  <div class="panel">
+   <h2>POST A NEW TASK</h2>
+   <form id="taskForm">
+    <label>Task Title</label>
+    <input id="tTitle" required placeholder="Example: AI Data Labelling">
+
+    <label>Task Category</label>
+    <select id="tCategory">
+     <option>AI Training</option>
+     <option>Academic Writing</option>
+     <option>Transcription</option>
+     <option>Data Entry</option>
+    </select>
+
+    <label>Task Description</label>
+    <textarea id="tDescription" required placeholder="Describe the assignment, requirements and instructions..."></textarea>
+
+    <label>Payment / Reward (optional)</label>
+    <input id="tReward" placeholder="Example: KSh 200 per approved assignment">
+
+    <label>Deadline</label>
+    <input id="tDeadline" type="date">
+
+    <button class="primary" type="submit">PUBLISH TASK</button>
+   </form>
+  </div>
+
+  <!-- MANAGE TASKS -->
+  <div class="panel">
+   <h2>MANAGE POSTED TASKS</h2>
+   <div id="adminTasks"></div>
+  </div>
+
+  <!-- MEMBERS -->
+  <div class="panel">
+   <h2>REGISTERED MEMBERS & PAYMENT VERIFICATION</h2>
+   <div class="table-wrap">
+    <table>
+     <thead>
+      <tr>
+       <th>Name</th><th>ID</th><th>Phone</th>
+       <th>Category</th><th>Method</th><th>Reference</th>
+       <th>Payment</th><th>Account</th><th>Action</th>
+      </tr>
+     </thead>
+     <tbody id="memberRows"></tbody>
+    </table>
+   </div>
+  </div>
+
+  <div class="panel">
+   <h2>SHARING / JOINING LINK</h2>
+   <p>Copy the customized Sharp Scan registration link.</p>
+   <input id="adminJoinLink" readonly>
+   <button class="primary" onclick="copyJoin()">COPY JOINING LINK</button>
+  </div>
+
+  <button class="red" onclick="logout()">ADMIN LOG OUT</button>
+ </div>
+</section>
+
+<footer>
+ <h3>SHARP SCAN ONLINE TASKS</h3>
+ <p>YOUR SKILLS. YOUR OPPORTUNITY. YOUR FUTURE.</p>
+ <p>Contact: 0748559320</p>
+ <p class="small" style="color:#c8d7ee">
+  © 2026 Sharp Scan Online Tasks. All Rights Reserved.
+ </p>
+</footer>
+
+<script>
+/* DEMO STORAGE
+   Production version requires a secure server and database. */
+
+const read = key => JSON.parse(localStorage.getItem(key)||"[]");
+const save = (key,data) =>
+ localStorage.setItem(key,JSON.stringify(data));
+
+let currentID = null;
+let adminLoggedIn = false;
+
+const categories=[
+ "AI Training","Academic Writing","Transcription","Data Entry"
+];
+
+function page(id){
+ document.querySelectorAll("body > section").forEach(s=>
+  s.classList.add("hidden"));
+ document.getElementById(id).classList.remove("hidden");
+ window.scrollTo(0,0);
+ if(id==="tasks") renderPublicTasks();
+}
+
+function joinURL(){
+ const url=new URL(window.location.href);
+ url.hash="";
+ url.search="?join=sharp-scan-online-tasks";
+ return url.href;
+}
+
+function setupLinks(){
+ ["joinLinkHome","joinLinkUser","adminJoinLink"].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el)el.value=joinURL();
+ });
+}
+
+function copyText(value){
+ if(navigator.clipboard && window.isSecureContext){
+  navigator.clipboard.writeText(value)
+   .then(()=>alert("Copied: "+value))
+   .catch(()=>alert("Please copy manually: "+value));
+ }else{
+  prompt("Copy this value:",value);
+ }
+}
+
+function copyJoin(){
+ copyText(joinURL());
+}
+
+function escapeHTML(value){
+ return String(value??"").replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",
+  '"':"&quot;","'":"&#39;"
+ }[c]));
+}
+
+/* REGISTRATION */
+document.getElementById("registerForm").addEventListener("submit",e=>{
+ e.preventDefault();
+
+ const name=document.getElementById("rName").value.trim();
+ const id=document.getElementById("rId").value.trim();
+ const phone=document.getElementById("rPhone").value.trim();
+ const email=document.getElementById("rEmail").value.trim();
+ const password=document.getElementById("rPassword").value;
+ const confirm=document.getElementById("rConfirm").value;
+
+ if(password!==confirm){
+  alert("Passwords do not match.");
+  return;
+ }
+ if(password.length<8){
+  alert("Password must have at least 8 characters.");
+  return;
+ }
+
+ let users=read("ss_users");
+ if(users.some(u=>u.id===id)){
+  alert("This ID number is already registered.");
+  return;
+ }
+
+ users.push({
+  name,id,phone,email,password,
+  category:document.getElementById("rCategory").value,
+  status:"Pending",
+  paymentStatus:"Not submitted",
+  paymentMethod:"",
+  paymentCode:"",
+  created:new Date().toISOString(),
+  applications:[]
+ });
+
+ save("ss_users",users);
+ currentID=id;
+ alert("Registration successful. Please complete your KSh 90 activation payment.");
+ page("payment");
+});
+
+/* PAYMENT REFERENCE */
+document.getElementById("paymentForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(!currentID){
+  alert("Please log in first.");
+  page("login");
+  return;
+ }
+
+ let users=read("ss_users");
+ let user=users.find(u=>u.id===currentID);
+ if(!user)return;
+
+ user.paymentMethod=document.getElementById("pMethod").value;
+ user.paymentCode=document.getElementById("pCode").value.trim();
+ user.paymentStatus="Awaiting verification";
+ save("ss_users",users);
+
+ alert("Reference submitted. Your payment is not yet confirmed. Please wait for admin verification.");
+ renderDashboard();
+});
+
+/* USER LOGIN */
+document.getElementById("loginForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const id=document.getElementById("lId").value.trim();
+ const password=document.getElementById("lPassword").value;
+
+ const user=read("ss_users").find(u=>u.id===id&&u.password===password);
+ if(!user){
+  alert("Incorrect ID number or password.");
+  return;
+ }
+ currentID=id;
+ renderDashboard();
+});
+
+/* USER DASHBOARD */
+function renderDashboard(){
+ const user=read("ss_users").find(u=>u.id===currentID);
+ if(!user){page("login");return;}
+
+ document.getElementById("welcome").textContent=user.name;
+ document.getElementById("uStatus").textContent=user.status;
+ document.getElementById("uPayment").textContent=user.paymentStatus;
+ document.getElementById("uCategory").textContent=user.category;
+
+ document.getElementById("lockMessage").textContent=
+ user.status==="Active"
+ ? "Your account is active. You can view and apply for available assignments."
+ : "Your account is pending activation. Submit your payment reference and wait for verification.";
+
+ renderUserTasks(user);
+ setupLinks();
+ page("dashboard");
+}
+
+function renderUserTasks(user){
+ const tasks=read("ss_tasks");
+ const box=document.getElementById("userTasks");
+ box.innerHTML="";
+
+ const eligible=tasks.filter(t=>
+  t.category===user.category || t.category==="All Categories"
+ );
+
+ if(!eligible.length){
+  box.innerHTML="<p>No assignments have been posted for your selected category yet.</p>";
+  return;
+ }
+
+ eligible.forEach(t=>{
+  const div=document.createElement("div");
+  div.className="task";
+  div.innerHTML=`
+   <span class="badge">${escapeHTML(t.category)}</span>
+   <h3>${escapeHTML(t.title)}</h3>
+   <p>${escapeHTML(t.description)}</p>
+   <p><b>Reward:</b> ${escapeHTML(t.reward||"As specified by the administrator")}</p>
+   <p><b>Deadline:</b> ${escapeHTML(t.deadline||"Not specified")}</p>
+   <button class="primary" ${user.status!=="Active"?"disabled":""}
+    onclick="applyTask('${t.id}')">APPLY FOR TASK</button>
+  `;
+  box.appendChild(div);
+ });
+}
+
+function applyTask(taskID){
+ let users=read("ss_users");
+ let user=users.find(u=>u.id===currentID);
+ if(!user || user.status!=="Active"){
+  alert("Your account must be activated first.");
+  return;
+ }
+ if(user.applications.includes(taskID)){
+  alert("You have already applied for this task.");
+  return;
+ }
+ user.applications.push(taskID);
+ save("ss_users",users);
+ alert("Your task application has been recorded.");
+ renderDashboard();
+}
+
+/* ADMIN LOGIN */
+document.getElementById("adminLoginForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const username=document.getElementById("aUser").value;
+ const password=document.getElementById("aPass").value;
+
+ if(username==="admin" && password==="SharpScan90!"){
+  adminLoggedIn=true;
+  renderAdmin();
+  page("admin");
+ }else{
+  alert("Incorrect admin username or password.");
+ }
+});
+
+/* ADMIN POST TASK */
+document.getElementById("taskForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(!adminLoggedIn)return;
+
+ const tasks=read("ss_tasks");
+ tasks.unshift({
+  id:Date.now().toString(),
+  title:document.getElementById("tTitle").value.trim(),
+  category:document.getElementById("tCategory").value,
+  description:document.getElementById("tDescription").value.trim(),
+  reward:document.getElementById("tReward").value.trim(),
+  deadline:document.getElementById("tDeadline").value,
+  created:new Date().toISOString()
+ });
+
+ save("ss_tasks",tasks);
+ document.getElementById("taskForm").reset();
+ alert("Task published successfully.");
+ renderAdmin();
+});
+
+function renderPublicTasks(){
+ const box=document.getElementById("publicTasks");
+ const tasks=read("ss_tasks");
+ box.innerHTML="";
+
+ if(!tasks.length){
+  box.innerHTML="<div class='card'>No tasks have been published yet. Please check again later.</div>";
+  return;
+ }
+ tasks.forEach(t=>{
+  const div=document.createElement("div");
+  div.className="task";
+  div.innerHTML=`
+   <span class="badge">${escapeHTML(t.category)}</span>
+   <h3>${escapeHTML(t.title)}</h3>
+   <p>${escapeHTML(t.description)}</p>
+   <p><b>Reward:</b> ${escapeHTML(t.reward||"As agreed")}</p>
+   <p><b>Deadline:</b> ${escapeHTML(t.deadline||"Not specified")}</p>
+   <button class="primary" onclick="page('register')">JOIN TO APPLY</button>
+  `;
+  box.appendChild(div);
+ });
+}
+
+/* ADMIN DASHBOARD */
+function renderAdmin(){
+ if(!adminLoggedIn)return;
+
+ const users=read("ss_users");
+ const tasks=read("ss_tasks");
+
+ document.getElementById("totalMembers").textContent=users.length;
+ document.getElementById("pendingCount").textContent=
+ users.filter(u=>u.paymentStatus==="Awaiting verification").length;
+ document.getElementById("activeCount").textContent=
+ users.filter(u=>u.status==="Active").length;
+ document.getElementById("taskCount").textContent=tasks.length;
+
+ const rows=document.getElementById("memberRows");
+ rows.innerHTML="";
+
+ users.forEach((u,index)=>{
+  const tr=document.createElement("tr");
+  const vals=[
+   u.name,u.id,u.phone,u.category,u.paymentMethod||"-",
+   u.paymentCode||"-",u.paymentStatus,u.status
+  ];
+  vals.forEach(value=>{
+   const td=document.createElement("td");
+   td.textContent=value;
+   tr.appendChild(td);
+  });
+
+  const action=document.createElement("td");
+  const btn=document.createElement("button");
+  btn.className="green";
+  btn.textContent="Verify & Activate";
+  btn.disabled=!u.paymentCode||u.status==="Active";
+  btn.onclick=()=>activate(index);
+  action.appendChild(btn);
+  tr.appendChild(action);
+  rows.appendChild(tr);
+ });
+
+ const taskBox=document.getElementById("adminTasks");
+ taskBox.innerHTML="";
+ tasks.forEach(t=>{
+  const div=document.createElement("div");
+  div.className="task";
+  div.innerHTML=`
+   <h3>${escapeHTML(t.title)}</h3>
+   <p>${escapeHTML(t.category)}</p>
+   <p>${escapeHTML(t.description)}</p>
+   <button class="red" onclick="deleteTask('${t.id}')">DELETE TASK</button>
+  `;
+  taskBox.appendChild(div);
+ });
+ setupLinks();
+}
+
+function activate(index){
+ if(!adminLoggedIn)return;
+ let users=read("ss_users");
+ const user=users[index];
+ if(!user || !user.paymentCode)return;
+
+ if(!confirm("Have you independently confirmed receipt of KSh 90 for this user?"))return;
+
+ user.status="Active";
+ user.paymentStatus="Verified";
+ save("ss_users",users);
+ renderAdmin();
+ alert("Member successfully activated.");
+}
+
+function deleteTask(id){
+ if(!adminLoggedIn)return;
+ if(!confirm("Are you sure you want to delete this task?"))return;
+ save("ss_tasks",read("ss_tasks").filter(t=>t.id!==id));
+ renderAdmin();
+}
+
+function logout(){
+ currentID=null;
+ adminLoggedIn=false;
+ page("home");
+}
+
+setupLinks();
+renderPublicTasks();
+
+if(new URLSearchParams(location.search).get("join")==="sharp-scan-online-tasks"){
+ page("register");
+}else{
+ page("home");
+}
+</script>
+</body>
+</html>
